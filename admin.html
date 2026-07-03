@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rampenruf – Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <main class="wrap wide">
+    <section class="card">
+      <h1>Rampenruf Admin</h1>
+      <div id="loginBox" class="form inline">
+        <label>Admin-PIN <input id="pin" type="password" placeholder="PIN"></label>
+        <button id="loginBtn">Einloggen</button>
+      </div>
+      <div id="adminBox" class="hidden">
+        <div class="toolbar">
+          <button id="refreshBtn">Aktualisieren</button>
+          <button id="showQrBtn">QR-Code anzeigen</button>
+          <span id="status"></span>
+        </div>
+        <div id="qrBox" class="qr hidden">
+          <p>Dieser QR-Code führt zur Fahrer-Anmeldung:</p>
+          <div id="qrcode"></div>
+          <small id="driverUrl"></small>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zeit</th><th>Fahrer</th><th>Telefon</th><th>Kennzeichen</th><th>Tour</th><th>Status</th><th>Rampe</th><th>Aktion</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rampenruf – Fahrerregistrierung</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card hero">
+      <h1>Fahrer anmelden</h1>
+      <p>Bitte eintragen und auf SMS warten. Sie werden zur passenden Rampe gerufen.</p>
+      <form id="driverForm" class="form">
+        <label>Name Fahrer <input name="driver_name" required placeholder="Max Mustermann"></label>
+        <label>Handynummer <input name="phone" required inputmode="tel" placeholder="+49 170 1234567"></label>
+        <label>Kennzeichen <input name="plate" required placeholder="B-AB 1234"></label>
+        <label>Tour-/Lieferscheinnummer <input name="tour" placeholder="Optional"></label>
+        <label>Firma/Spedition <input name="company" placeholder="Optional"></label>
+        <label class="check"><input type="checkbox" required> Ich stimme zu, dass meine Daten für die Rampenzuweisung genutzt werden.</label>
+        <button type="submit">Jetzt registrieren</button>
+      </form>
+      <div id="result" class="result hidden"></div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
